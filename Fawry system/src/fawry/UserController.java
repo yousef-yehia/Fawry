@@ -1,4 +1,4 @@
-package fawry;
+package fawrySystem;
 
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ public class UserController {
 		userList.add(user1);
 		userList.add(user2);
 	}
-
+	
 	public void signUp() {
 
 		System.out.print("enter the username :");
@@ -87,25 +87,25 @@ public class UserController {
 
 	}
 
-	public void SearchForService(ArrayList<User> userList, int indexOfActive) {
-		Scanner scc = new Scanner(System.in);
-		System.out.println("Please enter the service");
-		String search = scc.nextLine().toLowerCase();
-		if ("mobile payment services".equals(search) || "mobile".equals(search)) {
-			new MobilePaymentServices(userList, indexOfActive);
-		}
-		if ("internet payment services".equals(search) || "internet".equals(search)) {
-			new InternetPaymentServices(userList, indexOfActive);
-		}
-		if ("land line".equals(search) || "land".equals(search)) {
-			new LandlineServices(userList, indexOfActive);
-		}
-		if ("donations".equals(search)) {
-			new DonationsServices(userList, indexOfActive);
-		} else {
-			System.out.println("Please enter right service ");
-		}
-	}
+//	public void SearchForService(ArrayList<User> userList, int indexOfActive) {
+//		Scanner scc = new Scanner(System.in);
+//		System.out.println("Please enter the service");
+//		String search = scc.nextLine().toLowerCase();
+//		if ("mobile payment services".equals(search) || "mobile".equals(search)) {
+//			new MobilePaymentServices(userList, indexOfActive);
+//		}
+//		if ("internet payment services".equals(search) || "internet".equals(search)) {
+//			new InternetPaymentServices(userList, indexOfActive);
+//		}
+//		if ("land line".equals(search) || "land".equals(search)) {
+//			new LandlineServices(userList, indexOfActive);
+//		}
+//		if ("donations".equals(search)) {
+//			new DonationsServices(userList, indexOfActive);
+//		} else {
+//			System.out.println("Please enter right service ");
+//		}
+//	}
 
 	public void addFunds(double funds) {
 		System.out.println("Please enter your credit card number");
@@ -122,20 +122,51 @@ public class UserController {
 			choice = scc.nextInt();
 			switch (choice) {
 			case 1: {
-				new MobilePaymentServices(userList, indexOfActive);
+				DisplayProviders.printProviders(MobilePaymentServices.providers);
+				int company;
+				company = scc.nextInt();
+				switch(company) {
+				case 1:
+					MobilePaymentServices.providers.get(0).pay(userList.get(indexOfActive));
+					break;
+				case 2:
+					MobilePaymentServices.providers.get(1).pay(userList.get(indexOfActive));
+					break;
+				case 3:
+					MobilePaymentServices.providers.get(2).pay(userList.get(indexOfActive));
+					break;
+				case 4:
+					MobilePaymentServices.providers.get(3).pay(userList.get(indexOfActive));
+					break;
+				}
 				break;
 			}
 			case 2: {
-				new InternetPaymentServices(userList, indexOfActive);
+				DisplayProviders.printProviders(InternetPaymentServices.providers);
+				int company;
+				company = scc.nextInt();
+				switch(company) {
+				case 1:
+					InternetPaymentServices.providers.get(0).pay(userList.get(indexOfActive));
+					break;
+				case 2:
+					InternetPaymentServices.providers.get(1).pay(userList.get(indexOfActive));
+					break;
+				case 3:
+					InternetPaymentServices.providers.get(2).pay(userList.get(indexOfActive));
+					break;
+				case 4:
+					InternetPaymentServices.providers.get(3).pay(userList.get(indexOfActive));
+					break;
+				}
 				break;
-
 			}
 			case 3: {
-				new LandlineServices(userList, indexOfActive);
+				DisplayProviders.printProviders(MobilePaymentServices.providers);
 				break;
 			}
 			case 4: {
-				new DonationsServices(userList, indexOfActive);
+				DisplayProviders.printProviders(MobilePaymentServices.providers);
 				break;
 			}
 			case 5: {
@@ -145,7 +176,7 @@ public class UserController {
 				break;
 			}
 			case 6: {
-				SearchForService(userList, indexOfActive);
+				//SearchForService(userList, indexOfActive);
 			}
 			case 7: {
 
@@ -153,7 +184,7 @@ public class UserController {
 			default:
 				System.out.println();
 			}
-
+			
 		} while (choice != 0);
 
 	}

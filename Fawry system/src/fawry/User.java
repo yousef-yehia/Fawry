@@ -1,4 +1,4 @@
-package fawry;
+package fawrySystem;
 
 public class User extends Account{
 

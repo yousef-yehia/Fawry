@@ -1,4 +1,4 @@
-package fawry;
+package fawrySystem;
 
 import java.util.Scanner;
 
@@ -11,14 +11,10 @@ public class FawrySystemMain {
 
 		AdminController admin = new AdminController();
 		UserController user = new UserController();
-		MobilePaymentServices MobilePayment = new MobilePaymentServices();
-		InternetPaymentServices InternetPayment = new InternetPaymentServices();
 		LandlineServices landLine = new LandlineServices();
 		DonationsServices donation = new DonationsServices();
 
 		donation.donationCreate();
-		MobilePayment.mobilePaymentProvidersCreate();
-		InternetPayment.internetPaymentServicesCreate();
 		user.createUser();
 		landLine.landLineProvidersCreate();
 

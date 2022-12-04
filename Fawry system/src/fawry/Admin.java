@@ -1,4 +1,4 @@
-package fawry;
+package fawrySystem;
 
 public class Admin extends Account{
 

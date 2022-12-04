@@ -1,13 +1,13 @@
-package fawry;
+package fawrySystem;
 
-public  class Provider {
+public  abstract class Provider {
 	String name;
 	boolean isCash,isCredit,isWallet;
-	public Provider(String name, boolean isWallet, boolean isCredit, boolean isCash) {
-		this.name = name;
-		this.isCash = isCash;
-		this.isCredit = isCredit;
-		this.isWallet = isWallet;
+	public Provider() {
+		this.name = " ";
+		this.isCash = true;
+		this.isCredit = true;
+		this.isWallet = true;
 	}
-//	public abstract void pay(User user);
+	public abstract void pay(User user);
 }
