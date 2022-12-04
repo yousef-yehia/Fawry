@@ -1,12 +1,9 @@
 package fawry;
 
-public class Admin extends User {
+public class Admin extends Account{
 
-	@Override
-	public void signIn(String username, String email, String password) {
-		// TODO Auto-generated method stub
-		
+	public Admin(String userName, String email, String password) {
+		super(userName, email, password);
 	}
 	
-
 }
