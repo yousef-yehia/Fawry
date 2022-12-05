@@ -1,6 +1,6 @@
 package fawrySystem;
 
-
+// a class to display all the payment method supported by a provider
 public class DisplayProviders {
 	public static void printPayment(Provider provider) {
 

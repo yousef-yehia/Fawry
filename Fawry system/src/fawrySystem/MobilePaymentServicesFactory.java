@@ -3,6 +3,7 @@ package fawrySystem;
 import java.util.Scanner;
 
 public  class MobilePaymentServicesFactory implements Service { 
+	static Discount servicediscount;
 	
 	public void printProviders() {
 		System.out.println("1- Vodafone \n2- Etisalat \n3- Orange \n4- We \n0- Exit");
@@ -31,8 +32,11 @@ public  class MobilePaymentServicesFactory implements Service {
 			Provider we = new WeMobileRecharge();
 			we.pay(user);
 			break;
+		case 0:
+			break;
+		default:
+			System.out.println("Invalid choice!");
 		}
-		break;
 	}
 		while(company != 0);
 	 }

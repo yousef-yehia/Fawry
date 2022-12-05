@@ -26,26 +26,28 @@ public class NGOsDonation extends Provider {
 		switch (method) {
 
 		case 1:
-
-			PayByWallet.pay(user, this.name, amount);
+			PayByWallet wallet  = new PayByWallet();
+			wallet.pay(user, this.name, amount);
 			method = 0;
 			break;
 
 		case 2:
-
-			PayByCredit.pay(user, this.name, amount);
+			PayByCredit credit = new PayByCredit();
+			credit.pay(user, this.name, amount);
 			method = 0;
 			break;
 
 		case 3: {
-			PayByCash.pay(user, this.name, amount);
+			PayByCash cash = new PayByCash();
+			cash.pay(user, this.name, amount);
 			method = 0;
 			break;
 		}
+		case 0:
+			break;
 		default:
-			System.out.println("Exit sucessfully");
+			System.out.println("Invalid choice!");
 		}
 
 	}
-
 }

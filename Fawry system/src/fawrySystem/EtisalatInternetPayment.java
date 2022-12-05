@@ -11,6 +11,7 @@ public class EtisalatInternetPayment extends Provider {
 	@Override
 	public void pay(User user) {
 		Scanner sc = new Scanner(System.in);
+		// variable to store the amount that the user will pay
 		double amount;
 		int method;
 
@@ -23,31 +24,49 @@ public class EtisalatInternetPayment extends Provider {
 		} else {
 			method = 0;
 		}
+		// an loop to check the discounts array and apply the discount if there is one
+		for (Discount itr : Discount.Discounts) {
+			if (itr.type.equals("Specific internet") && itr.flag == true) {
+				amount *= 1 - (itr.amount / 100);
+			}
+			if (itr.type.equals("Overall") && itr.flag == true) {
+				amount *= 1 - (itr.amount / 100);
+			}
+		}
+		// remove the discount if used the first time
+		for (int i = 0; i < Discount.Discounts.size(); i++) {
+			if (Discount.Discounts.get(i).type.equals("Overall")) {
+				Discount.Discounts.remove(i);
+			}
+			if (Discount.Discounts.get(i).type.equals("Specific internet")) {
+				Discount.Discounts.remove(i);
+			}
+		}
 		switch (method) {
 
 		case 1:
-
-			PayByWallet.pay(user, this.name, amount);
+			PayByWallet wallet = new PayByWallet();
+			wallet.pay(user, this.name, amount);
 			method = 0;
 			break;
 
 		case 2:
-
-			PayByCredit.pay(user, this.name, amount);
+			PayByCredit credit = new PayByCredit();
+			credit.pay(user, this.name, amount);
 			method = 0;
 			break;
 
 		case 3: {
-			PayByCash.pay(user, this.name, amount);
+			PayByCash cash = new PayByCash();
+			cash.pay(user, this.name, amount);
 			method = 0;
 			break;
 		}
-
+		case 0:
+			break;
 		default:
-			System.out.println("Exit sucessfully");
-
+			System.out.println("Invalid choice!");
 		}
 
 	}
-
 }

@@ -2,15 +2,17 @@ package fawrySystem;
 
 import java.util.Scanner;
 
-public class InternetPaymentServicesFactory implements Service { // template method pattern
+public class InternetPaymentServicesFactory implements Service { 
+	static Discount servicediscount;
 
 	public void printProviders() {
 		System.out.println("1- Vodafone \n2- Etisalat \n3- Orange \n4- We \n0- Exit");
 	}
-
+	
 	public InternetPaymentServicesFactory(User user) {
 		Scanner scc = new Scanner(System.in);
 		int company;
+		//the user chooses which provider he wants to use 
 		do {
 			printProviders();
 			company = scc.nextInt();
@@ -32,6 +34,10 @@ public class InternetPaymentServicesFactory implements Service { // template met
 				Provider we = new WeInternetPayment();
 				we.pay(user);
 				break;
+			case 0:
+				break;
+			default:
+				System.out.println("Invalid choice!");
 			}
 		} while (company != 0);
 	}

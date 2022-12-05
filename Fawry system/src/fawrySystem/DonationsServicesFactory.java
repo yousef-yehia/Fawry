@@ -2,7 +2,7 @@ package fawrySystem;
 
 import java.util.Scanner;
 
-public class DonationsServicesFactory implements Service { //template method pattern
+public class DonationsServicesFactory implements Service { 
 
 	public void printProviders() {
 		System.out.println("1- Cancer Hospital \n2- Schools \n3- NGO  \n0- Exit");
@@ -27,6 +27,10 @@ public class DonationsServicesFactory implements Service { //template method pat
 			Provider NGO = new NGOsDonation();
 			NGO.pay(user);
 			break;
+		case 0:
+			break;
+		default:
+			
 		}
 		break;
 	}

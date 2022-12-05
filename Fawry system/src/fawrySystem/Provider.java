@@ -2,7 +2,7 @@ package fawrySystem;
 
 public  abstract class Provider {
 	String name;
-	
+	// 3 boolean values to store if the provider supports a specific type of payment 
 	boolean isCash,isCredit,isWallet;
 	public Provider() {
 		this.name = " ";

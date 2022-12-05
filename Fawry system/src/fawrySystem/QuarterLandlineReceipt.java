@@ -6,7 +6,6 @@ public class QuarterLandlineReceipt extends Provider {
 	public QuarterLandlineReceipt() {
 		super();
 		this.name = "Quarter Receipt";
-		this.isCash = false;
 	}
 
 	@Override
@@ -15,32 +14,53 @@ public class QuarterLandlineReceipt extends Provider {
 		double amount = 600;
 		int method;
 		System.out.println("Your Quarter landline receipt is " + amount + " EGP");
-		
+
 		DisplayProviders.printPayment(this);
 		method = sc.nextInt();
-		switch (method) {
-		case 1:
+		// an loop to check the discounts array and apply the discount if there is one
+		for (Discount itr : Discount.Discounts) {
+			if (itr.type.equals("Specific landline") && itr.flag == true) {
+				amount *= 1 - (itr.amount / 100);
+			}
+			if (itr.type.equals("Overall") && itr.flag == true) {
+				amount *= 1 - (itr.amount / 100);
+			}
 
-			PayByWallet.pay(user, this.name, amount);
+		}
+		// remove the discount if used the first time
+		for (int i = 0; i < Discount.Discounts.size(); i++) {
+			if (Discount.Discounts.get(i).type.equals("Overall")) {
+				Discount.Discounts.remove(i);
+			}
+			if (Discount.Discounts.get(i).type.equals("Specific landline")) {
+				Discount.Discounts.remove(i);
+			}
+		}
+		switch (method) {
+
+		case 1:
+			PayByWallet wallet = new PayByWallet();
+			wallet.pay(user, this.name, amount);
 			method = 0;
 			break;
 
 		case 2:
-
-			PayByCredit.pay(user, this.name, amount);
+			PayByCredit credit = new PayByCredit();
+			credit.pay(user, this.name, amount);
 			method = 0;
 			break;
 
 		case 3: {
-			PayByCash.pay(user, this.name, amount);
+			PayByCash cash = new PayByCash();
+			cash.pay(user, this.name, amount);
 			method = 0;
 			break;
 		}
-
+		case 0:
+			break;
 		default:
-			System.out.println("Wrong choice!");
+			System.out.println("Invalid choice!");
 		}
 
 	}
-
 }
