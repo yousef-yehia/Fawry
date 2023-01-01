@@ -1,0 +1,31 @@
+package com.example.demo.Service;
+
+import static com.example.demo.DB.Common.systemDiscounts;
+
+import com.example.demo.Model.User;
+import com.example.demo.Model.DiscountsModel.Discount;
+import com.example.demo.Model.TransactionsModel.PaymentTransaction;
+
+public class PayByWallet implements Payment {
+	@Override
+	public double applyDiscount(double amount, String su) {
+		double amountAfterDiscount = 0;
+		for (Discount discount : systemDiscounts) {
+			if(discount.getType().equals("Overall discount")) amountAfterDiscount += discount.getValue();
+			if(discount.getType().equals("Specific discount") && discount.getService().equals(su)) amountAfterDiscount += discount.getValue();
+		}
+		amountAfterDiscount = amount - ((amountAfterDiscount * amount)/100);
+		return amountAfterDiscount;
+	}
+	@Override
+	public boolean pay(User user, double amount, String su) {
+		double amountAfterDiscount = applyDiscount(amount, su);
+		if (user.getWalletBalance() >= amount) {
+			double wallet = user.getWalletBalance() - amountAfterDiscount;
+			user.setWalletBalance(wallet);
+			user.getTransactions().add(new PaymentTransaction(su, amountAfterDiscount, user.getID()));
+			return true;
+		}
+		else return false;
+	}
+}

@@ -1,0 +1,10 @@
+package com.example.demo.Service;
+import java.util.ArrayList;
+
+import com.example.demo.Model.Admin;
+import com.example.demo.Model.TransactionsModel.Transaction;
+public interface AdminService {
+	public Boolean signIn(String userName , String email, String password);
+	public Admin getAdmin();
+	public ArrayList<Transaction> getAllUserTransactions(int userID);
+}

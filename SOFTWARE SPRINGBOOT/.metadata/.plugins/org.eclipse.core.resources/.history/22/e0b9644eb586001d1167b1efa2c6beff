@@ -1,0 +1,16 @@
+package com.example.demo.Model;
+
+public abstract class Provider {
+	String name;
+	boolean cash, wallet, cc;
+	public Provider(String name) {
+		this.name = name;
+		this.cash = true;
+		this.wallet = true;
+		this.cc = true;
+	}
+	public String getName() { 
+		return this.name;
+	}
+	public abstract boolean Pay();
+}

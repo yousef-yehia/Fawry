@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
+    <fullyQualifiedTypeName name="com.example.demo.Service.AdminService"/>
+    <fullyQualifiedTypeName name="com.example.demo.Service.AdminServiceImpl"/>
+    <fullyQualifiedTypeName name="com.example.demo.Model.Admin"/>
+    <fullyQualifiedTypeName name="com.example.demo.Model.Provider"/>
+    <fullyQualifiedTypeName name="com.example.demo.Model.ProvidersModel.Provider"/>
+    <fullyQualifiedTypeName name="com.example.demo.Model.ProvidersModel.Vodafone"/>
+    <fullyQualifiedTypeName name="com.example.demo.Model.ProvidersModel.Etisalat"/>
+    <fullyQualifiedTypeName name="com.example.demo.Model.ProvidersModel.Orange"/>
+    <fullyQualifiedTypeName name="com.example.demo.Model.ProvidersModel.We"/>
+    <fullyQualifiedTypeName name="com.example.demo.Model.ProvidersModel.Monthly"/>
+    <fullyQualifiedTypeName name="com.example.demo.Model.ProvidersModel.Quarterly"/>
+    <fullyQualifiedTypeName name="com.example.demo.Model.ProvidersModel.Schools"/>
+    <fullyQualifiedTypeName name="com.example.demo.Model.ProvidersModel.NGOs"/>
+    <fullyQualifiedTypeName name="com.example.demo.Model.ProvidersModel.CancerHospital"/>
+    <fullyQualifiedTypeName name="com.example.demo.Model.ServicesModel.Service"/>
+    <fullyQualifiedTypeName name="com.example.demo.Model.ServicesModel.InternetPayment"/>
+    <fullyQualifiedTypeName name="com.example.demo.Model.ServicesModel.Donation"/>
+    <fullyQualifiedTypeName name="com.example.demo.Model.ServicesModel.LandLine"/>
+    <fullyQualifiedTypeName name="com.example.demo.Service.ServiceFactory"/>
+    <fullyQualifiedTypeName name="com.example.demo.Model.ServicesModel.SystemService"/>
+    <fullyQualifiedTypeName name="com.example.demo.Model.ServicesModel.MobileRecharge"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
+    <fullyQualifiedTypeName name="java.util.UUID"/>
+    <fullyQualifiedTypeName name="com.example.demo.Model.Transaction"/>
+    <fullyQualifiedTypeName name="com.example.demo.Model.User"/>
+    <fullyQualifiedTypeName name="com.example.demo.Model.TransactionsModel.AddToWalletTransaction"/>
+    <fullyQualifiedTypeName name="com.example.demo.Model.TransactionsModel.PaymentTransaction"/>
+    <fullyQualifiedTypeName name="com.example.demo.Model.DiscountsModel.OverallDiscount"/>
+    <fullyQualifiedTypeName name="com.example.demo.Model.DiscountsModel.SpecificDiscount"/>
+    <fullyQualifiedTypeName name="com.example.demo.Model.DiscountsModel.Discount"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PutMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="com.example.demo.Model.RefundRequest"/>
+    <fullyQualifiedTypeName name="com.example.demo.Model.TransactionsModel.RefundTransaction"/>
+    <fullyQualifiedTypeName name="com.example.demo.Model.TransactionsModel.Transaction"/>
+</qualifiedTypeNameHistroy>

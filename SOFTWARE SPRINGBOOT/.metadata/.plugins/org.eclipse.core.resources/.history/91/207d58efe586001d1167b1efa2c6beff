@@ -1,0 +1,9 @@
+package com.example.demo.Service;
+
+
+public class PayByCc implements Payment{
+	@Override
+	public boolean pay(double amount) {
+			return true;
+	}
+}

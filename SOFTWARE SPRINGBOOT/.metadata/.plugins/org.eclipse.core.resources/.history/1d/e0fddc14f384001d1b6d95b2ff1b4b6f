@@ -1,0 +1,17 @@
+package com.example.demo.Service;
+
+import java.util.ArrayList;
+
+import com.example.demo.Model.User;
+
+public interface UserService {
+	public Boolean addUser(User u);
+	public Boolean deleteUser(int id);
+	public ArrayList<User> getAllUsers();
+	public Bolean signIn(User user);
+	public Boolean signUp(User user);
+	
+	
+	
+	
+}

@@ -1,0 +1,12 @@
+package com.example.demo.Model;
+
+public class Etisalat extends Provider {
+	public Etisalat() {
+		this.name = "Etisalat";	
+	}
+
+	@Override
+	public boolean Pay(User user , double amount) {
+		return false;
+	}
+}

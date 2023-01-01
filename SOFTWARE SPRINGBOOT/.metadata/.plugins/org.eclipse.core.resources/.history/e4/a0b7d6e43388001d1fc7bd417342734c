@@ -1,0 +1,13 @@
+package com.example.demo.Service;
+import java.util.ArrayList;
+
+import com.example.demo.Model.Admin;
+import com.example.demo.Model.User;
+import com.example.demo.Model.TransactionsModel.Transaction;
+public interface AdminService {
+	public Boolean signIn(String userName , String email, String password);
+	public Admin getAdmin();
+	public ArrayList<Transaction> getAllUserTransactions(int userID);
+	public User getUserByID(int userID);
+	public String addDiscount(double value);
+}

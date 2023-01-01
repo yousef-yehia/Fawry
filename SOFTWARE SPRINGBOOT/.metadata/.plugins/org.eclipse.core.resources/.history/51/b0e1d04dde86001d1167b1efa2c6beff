@@ -1,0 +1,16 @@
+package com.example.demo.Model.ServicesModel;
+
+
+import com.example.demo.Model.ProvidersModel.Monthly;
+import com.example.demo.Model.ProvidersModel.Provider;
+import com.example.demo.Model.ProvidersModel.Quarterly;
+
+public class Donation extends Service{
+	public Donation() {
+		this.setName("Internet Payment");
+		Provider Monthly = new Monthly();
+		Provider Quarterly = new Quarterly();
+		this.addProvider(Monthly);
+		this.addProvider(Quarterly);
+	}
+}

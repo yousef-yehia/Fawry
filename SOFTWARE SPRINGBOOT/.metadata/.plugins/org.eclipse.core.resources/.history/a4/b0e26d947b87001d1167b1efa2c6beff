@@ -1,0 +1,20 @@
+package com.example.demo.Service;
+
+import java.util.ArrayList;
+
+import com.example.demo.Model.Transaction;
+import com.example.demo.Model.User;
+
+public interface UserService {
+	public ArrayList<User> getAllUsers();
+	public ArrayList<Transaction> getAllTransactions(int userID);
+	public User getCurrentUser();
+	public String signIn(String userName , String email, String password);
+	public Boolean signUp(User user);
+	public Boolean payByWallet(User user, double amount);
+	public Boolean payByCC(User user, double amount);
+	public Boolean payByCash(User user, double amount);
+	public String useService(int userID , int serviceID , int providerID, int paymentMethodID, double amount);
+	public String addFundsToWallet(int userID, double amount);
+	public String requestRefund(int userID, int paymentID);
+}

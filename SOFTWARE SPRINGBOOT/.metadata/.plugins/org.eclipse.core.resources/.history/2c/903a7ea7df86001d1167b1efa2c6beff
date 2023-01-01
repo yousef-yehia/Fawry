@@ -1,0 +1,26 @@
+package com.example.demo.Service;
+
+import com.example.demo.Model.ServicesModel.Service;
+
+public class ServiceFactory {
+	Service v = new InternetPayment();
+	public static Service getService(int serviceID) {
+		if  (serviceID == null) {
+			return null;
+		}
+		else if(serviceID == 1) {
+			return Service intre = new InterPayment();
+		}
+		else if(serviceID == 1) {
+			return MobileRecharge.getSingleton();
+		}
+		else if(serviceID == 1) {
+			return Landline.getSingleton();
+		}
+		else if(serviceID == 1) {
+			return Donation.getSingleton();
+		}
+		return null;
+	}
+
+}

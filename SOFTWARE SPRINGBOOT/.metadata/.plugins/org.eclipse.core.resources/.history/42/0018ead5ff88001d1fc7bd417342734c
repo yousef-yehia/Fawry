@@ -1,0 +1,45 @@
+package com.example.demo.Controller;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.Model.Admin;
+import com.example.demo.Model.TransactionsModel.Transaction;
+import com.example.demo.Service.AdminService;
+import com.example.demo.Service.AdminServiceImpl;
+
+
+@RestController
+public class AdminController {
+	@Autowired
+    AdminService adminService = new AdminServiceImpl();
+	@PostMapping("/signInAdmin")
+	public String signIn(String email, String password) {
+		return adminService.signIn(email, password);
+	}
+	@GetMapping("/getAdmin")
+	public Admin getAdmin() {
+		return adminService.getAdmin();
+	}
+	@GetMapping("/getUserTransactions")
+	public ArrayList<Transaction> getAllUserTransactions(int userID){
+		return adminService.getAllUserTransactions(userID);
+	}
+	@GetMapping("/getAllUserRefundRequests")
+	public ArrayList<Transaction> getAllUserRefundRequests(int userID){
+		return adminService.getAllUserRefundRequests(userID);
+	}
+	@PostMapping("/addDiscount")
+	public String addDiscount(String type, double value, String serviceName) {
+		return adminService.addDiscount(type, value, serviceName);
+	} 
+	@PutMapping("/acceptRefund")
+	public String acceptRefund(String decision, int userID, int transactionID){
+		return adminService.acceptRefundRequest(decision, userID, transactionID);
+	}
+}

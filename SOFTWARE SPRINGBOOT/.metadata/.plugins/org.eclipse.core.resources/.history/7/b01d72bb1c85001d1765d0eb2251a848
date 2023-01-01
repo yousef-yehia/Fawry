@@ -1,0 +1,7 @@
+package com.example.demo.Service;
+import com.example.demo.Model.User;
+import com.example.demo.common.currentUser;
+
+public interface Payment {
+	public abstract boolean pay( , double amount);
+}

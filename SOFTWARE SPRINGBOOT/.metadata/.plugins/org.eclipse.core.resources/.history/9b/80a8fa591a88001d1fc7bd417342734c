@@ -1,0 +1,6 @@
+package com.example.demo.Service;
+import com.example.demo.Model.Admin;
+public interface AdminService {
+	public Boolean signIn(String userName , String email, String password);
+	public Admin getAdmin();
+}

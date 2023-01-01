@@ -1,0 +1,18 @@
+package com.example.demo.Service;
+
+import com.example.demo.Model.User;
+import com.example.demo.Model.DiscountsModel.Discount;
+
+import static com.example.demo.DB.Common.systemDiscounts;
+
+public interface Payment {
+	public abstract boolean pay(User user, double amount, String su);
+	public static double applyDiscount(String su) {
+		double valueOfDiscount = 0;
+		for (Discount discount : systemDiscounts) {
+			if(discount.getType().equals("Overall discount")) valueOfDiscount += discount.getValue();
+			if(discount.getType().equals("Specific discount") && discount.getService().equals(su)) valueOfDiscount += discount.getValue();
+		}
+		return valueOfDiscount;
+	};
+}

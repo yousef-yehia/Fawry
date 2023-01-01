@@ -1,0 +1,11 @@
+package com.example.demo.Service;
+
+import com.example.demo.Model.User;
+
+public class PayByCash implements Payment {
+
+	@Override
+	public boolean pay(User user, double amount) {
+			return true;
+	}
+}

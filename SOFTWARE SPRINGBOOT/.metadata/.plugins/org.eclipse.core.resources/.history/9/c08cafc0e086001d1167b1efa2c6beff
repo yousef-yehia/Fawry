@@ -1,0 +1,19 @@
+package com.example.demo.Model.ServicesModel;
+
+
+import com.example.demo.Model.ProvidersModel.CancerHospital;
+import com.example.demo.Model.ProvidersModel.NGOs;
+import com.example.demo.Model.ProvidersModel.Provider;
+import com.example.demo.Model.ProvidersModel.Schools;
+
+public class Donation extends Service{
+	public Donation() {
+		this.setName("Donation Service");
+		Provider NGOs = new NGOs();
+		Provider CancerHospital = new CancerHospital();
+		Provider Schools = new Schools();
+		this.addProvider(NGOs);
+		this.addProvider(CancerHospital);
+		this.addProvider(Schools);
+	}
+}

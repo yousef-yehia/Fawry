@@ -1,0 +1,52 @@
+package com.example.demo.Model;
+
+import java.util.ArrayList;
+
+
+
+public class User {
+	String userName; 
+    String email; 
+    String password;
+    Double wallet;
+    int id;
+    // an array to store all the user purchases
+    ArrayList<Double> purchases = new ArrayList<Double>();
+
+    public User(String userName, String email, String password, int id){
+        this.email = email;
+        this.password = password;
+        this.userName = userName;
+        this.wallet = 100d;
+        this.id = id;
+    }
+    public User() {
+    	
+    }
+    public String getUserName(){
+        return this.userName;
+    }
+    public String getPassword(){
+        return this.password;
+    }
+    public String getEmail(){
+        return this.email;
+    }
+    public Double getWalletBalance(){
+        return this.wallet;
+    }
+    public void setWalletBalance(double amount){
+    	this.wallet = amount;
+    }
+    public void addPurchase(double amount) {
+    	this.purchases.add(amount);
+    }
+    
+    public ArrayList<Double> getPurchases(){
+        return this.purchases;
+    }
+    @Override
+	public String toString() {
+		return email + "::" + userName + "::";
+	}
+}

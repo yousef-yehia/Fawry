@@ -1,0 +1,8 @@
+package com.example.demo.Model.ServicesModel;
+
+public class InternetPayment extends Service{
+	String name;
+	InternetPayment() {
+		this.name = "Internet Payment Service";
+	}
+}

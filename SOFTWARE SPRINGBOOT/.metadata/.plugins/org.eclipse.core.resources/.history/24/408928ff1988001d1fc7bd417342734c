@@ -1,0 +1,37 @@
+package com.example.demo.Model;
+
+public class Transaction {
+	double amount;
+	int userID;
+	String type;
+	boolean refunded;
+	String serviceUsed;
+	public Transaction(String type, String su, double a, int uID){
+		this.type = type;
+		this.serviceUsed = su;
+		this.amount = a;
+		this.userID = uID;
+		this.refunded = false;
+	}
+	public String getServiceUsed() {
+		return serviceUsed;
+	}
+	public boolean isRefunded() {
+		return refunded;
+	}
+	public void setRefunded(boolean refunded) {
+		this.refunded = refunded;
+	}
+	public double getAmount() {
+		return amount;
+	}
+	public int getUserID() {
+		return userID;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+}

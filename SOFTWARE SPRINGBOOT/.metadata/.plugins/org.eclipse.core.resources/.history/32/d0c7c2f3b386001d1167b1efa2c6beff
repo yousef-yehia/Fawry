@@ -1,0 +1,11 @@
+package com.example.demo.Service;
+
+import static com.example.demo.DB.Common.currentUser;
+
+public class PayByCc implements Payment{
+	@Override
+	public boolean pay(double amount) {
+			return true;
+	}
+
+}

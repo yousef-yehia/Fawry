@@ -1,0 +1,19 @@
+package com.example.demo.Model.DiscountsModel;
+
+public abstract class Discount {
+	String type;
+	double value;
+	public Discount(double value) {
+		this.value = value;
+	}
+	public String getType() {
+		return type;
+	}
+	public double getValue() {
+		return value;
+	}
+	public void setValue(double value) {
+		this.value = value;
+	}
+
+}

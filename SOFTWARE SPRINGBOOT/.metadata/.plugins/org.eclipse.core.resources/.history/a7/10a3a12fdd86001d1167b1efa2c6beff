@@ -1,0 +1,31 @@
+package com.example.demo.Model.ServicesModel;
+
+import com.example.demo.Model.ProvidersModel.Etisalat;
+import com.example.demo.Model.ProvidersModel.Orange;
+import com.example.demo.Model.ProvidersModel.Provider;
+import com.example.demo.Model.ProvidersModel.Vodafone;
+import com.example.demo.Model.ProvidersModel.We;
+
+public class MobileRecharge extends Service{
+	public MobileRecharge() {
+		setName("Internet payment");
+		Provider Vodafone = new Vodafone();
+		Provider Etisalat = new Etisalat();
+		Provider Orange = new Orange();
+		Provider We = new We();
+		this.addProvider(Vodafone);
+		this.addProvider(Etisalat);
+		this.addProvider(Orange);
+		this.addProvider(We);
+	}
+}
+
+//singleton design pattern for the class
+public static SystemService getSingleton() {
+	if (singleton == null) {
+		singleton = new InternetPayment();
+	}
+	return singleton;
+} 
+
+}

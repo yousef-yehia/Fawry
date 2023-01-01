@@ -1,0 +1,8 @@
+package com.example.demo.Model.ProvidersModel;
+
+public class CancerHospital extends Provider{
+	CancerHospital(){
+		this.name = "Cancer Hospital";
+	}
+
+}

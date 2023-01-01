@@ -1,0 +1,50 @@
+package com.example.demo.Service;
+
+import org.springframework.stereotype.Service;
+
+import com.example.demo.Model.Admin;
+import com.example.demo.Model.User;
+import com.example.demo.Model.DiscountsModel.OverallDiscount;
+import com.example.demo.Model.DiscountsModel.SpecificDiscount;
+import com.example.demo.Model.TransactionsModel.Transaction;
+
+import static com.example.demo.DB.Common.admin;
+import static com.example.demo.DB.Common.loggedInUsers;
+import static com.example.demo.DB.Common.systemDiscounts;
+
+import java.util.ArrayList;
+
+@Service
+public class AdminServiceImpl implements AdminService{
+	@Override
+	public Boolean signIn(String userName , String email, String password) {
+			if(admin.getEmail().equals(email) && admin.getPassword().equals(password) && admin.getUserName().equals(userName)) {
+				admin.setLoggedIn(true);
+				return true;
+			}
+		return false;
+	}
+	@Override
+	public Admin getAdmin() {
+		return admin;
+	}
+	@Override
+	public User getUserByID(int userID) {
+		for (User user : loggedInUsers) {
+			if(user.getID() == userID)
+				return user;
+		}
+		return null;
+	}
+	@Override
+	public ArrayList<Transaction> getAllUserTransactions(int userID){
+		User user = getUserByID(userID);
+		return user.getTransactions();
+	};
+	@Override
+	public String addDiscount(String type, double value, String sName) {
+		if(type.equals("Overall")) systemDiscounts.add(new OverallDiscount(value));
+		else if(type.equals("Specific")) systemDiscounts.add(new SpecificDiscount(value, sName));
+		return "Discount type is invalid!";
+	}
+}

@@ -1,0 +1,18 @@
+package com.example.demo.Service;
+
+import com.example.demo.Model.User;
+import static com.example.demo.DB.Common.currentUser;
+
+public class PayByWallet implements Payment {
+
+	@Override
+	public boolean pay(double amount) {
+		if (user.getWalletBalance() >= amount) {
+			user.setWalletBalance(user.getWalletBalance() - amount);
+			user.addPurchase(amount);
+			return true;
+		}
+		else return false;
+	}
+
+}

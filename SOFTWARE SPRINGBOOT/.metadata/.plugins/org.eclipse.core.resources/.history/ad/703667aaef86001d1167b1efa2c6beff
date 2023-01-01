@@ -1,0 +1,43 @@
+package com.example.demo.Controller;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.Model.User;
+import com.example.demo.Service.UserService;
+import com.example.demo.Service.UserServiceImpl;
+
+@RestController
+public class UserController {
+	@Autowired
+    UserService userService = new UserServiceImpl();
+	@GetMapping("/getAll")
+	public ArrayList<User> getAllUsers() {
+		return userService.getAllUsers();
+	}
+	@GetMapping("/current")
+	public User getCurrentUser() {
+		return userService.getCurrentUser();
+	}
+	@PostMapping("/signIn")
+	public String signIn(String userName , String email, String password ) { 
+		boolean done = userService.signIn(userName, email, password);
+		if(done) return "Signed in (User) sucessfully!";
+		return "Wrong Credintials!";
+	}
+	@PutMapping("/payByWallet")
+	public String PayByWallet(double amount) {
+		boolean done = userService.payByWallet(amount);
+		if(done) return "Payment sucessful!";
+		return "Insufficient funds!";
+	}
+	@GetMapping("/service/apply")
+	public String useService(int serviceID , int providerID, int paymentMethodID, double amount){
+		return userService.useService(serviceID, providerID, paymentMethodID, amount);
+	}
+}

@@ -1,0 +1,28 @@
+package com.example.demo.Service;
+
+import com.example.demo.Model.ServicesModel.Donation;
+import com.example.demo.Model.ServicesModel.InternetPayment;
+import com.example.demo.Model.ServicesModel.LandLine;
+import com.example.demo.Model.ServicesModel.MobileRecharge;
+import com.example.demo.Model.ServicesModel.Service;
+
+public class ServiceFactory {
+	public static Service getService(int serviceID) {
+		if  (serviceID != 1 || serviceID != 2 || serviceID != 3 || serviceID != 4) {
+			return null;
+		}
+		else if(serviceID == 1) {
+			return new InternetPayment();
+		}
+		else if(serviceID == 1) {
+			return new MobileRecharge();
+		}
+		else if(serviceID == 1) {
+			return new LandLine();
+		}
+		else if(serviceID == 1) {
+			return new Donation();
+		}
+	}
+
+}

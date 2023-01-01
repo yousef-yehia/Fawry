@@ -1,0 +1,24 @@
+package com.example.demo.Model;
+
+public class RefundRequest {
+	private int userID;
+	private double refundAmount;
+	private boolean accepted;
+	public RefundRequest(int uID, double a) {
+		this.userID = uID;
+		this.refundAmount = a;
+		this.accepted = false;
+	}
+	public int getUserID() {
+		return userID;
+	}
+	public double getRefundAmount() {
+		return refundAmount;
+	}
+	public boolean isAccepted() {
+		return accepted;
+	}
+	public void setAccepted(boolean accepted) {
+		this.accepted = accepted;
+	}
+}

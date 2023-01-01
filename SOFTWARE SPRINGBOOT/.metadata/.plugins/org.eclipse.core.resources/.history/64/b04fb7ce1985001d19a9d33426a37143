@@ -1,0 +1,12 @@
+package com.example.demo.Service;
+
+import com.example.demo.Model.User;
+
+public class PayByWallet implements Payment {
+
+	@Override
+	public void pay(User user, double amount) {
+		
+	}
+
+}

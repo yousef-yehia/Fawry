@@ -1,0 +1,30 @@
+package com.example.demo.Model.ServicesModel;
+
+import java.util.ArrayList;
+
+import com.example.demo.Model.ProvidersModel.Provider;
+
+public abstract class SystemService {
+	private String name;
+	private ArrayList<Provider> providers;
+	private boolean discount = false;
+	public boolean isDiscount() {
+		return this.discount;
+	}
+	public void setDiscount(boolean discount) {
+		this.discount = discount;
+	}
+	public ArrayList<Provider> getProviders() {
+		return this.providers;
+	}
+	public void addProvider(Provider provider) {
+		providers.add(provider);
+	}
+	public String getName() {
+		return this.name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public abstract SystemService create();
+}

@@ -1,0 +1,16 @@
+package com.example.demo.Model.TransactionsModel;
+
+public class PaymentTransaction extends Transaction{
+	int transactionID;
+	private static int counter = 0;
+	public PaymentTransaction(String su, double a, int uID) {
+		super(a, uID);
+		this.type = "Payment Transaction";
+		this.serviceUsed = su;
+		counter++;
+		this.transactionID = counter;
+	}
+	public String getServiceUsed() {
+		return serviceUsed;
+	}
+}

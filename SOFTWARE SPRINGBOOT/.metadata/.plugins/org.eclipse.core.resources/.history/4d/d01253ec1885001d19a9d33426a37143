@@ -1,0 +1,6 @@
+package com.example.demo.Model;
+
+public interface Payment {
+	public abstract void pay(User user , double amount);
+
+}

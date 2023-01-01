@@ -1,0 +1,13 @@
+package com.example.demo.Model.TransactionsModel;
+
+public class PaymentTransaction extends Transaction{
+	String serviceUsed;
+	public PaymentTransaction(String su, double a, int uID) {
+		super(a, uID);
+		this.type = "Payment Transaction";
+		this.serviceUsed = su;
+	}
+	public String getServiceUsed() {
+		return serviceUsed;
+	}
+}

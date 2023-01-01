@@ -1,0 +1,11 @@
+package com.example.demo.DB;
+
+import java.util.ArrayList;
+
+import com.example.demo.Model.User;
+
+public class Common {
+	public static ArrayList<User> users = new ArrayList<User>();
+	public static User currentUser = new User();
+	
+}
